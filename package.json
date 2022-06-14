@@ -14,13 +14,14 @@
     "typescript": "^4.7.3"
   },
   "scripts": {
-    "start": "ts-node ./src/index.ts",
+    "start": "ts-node src/index.ts",
     "dev": "ts-node ./src/index.ts"
   },
   "type": "module",
   "engines": {
     "node": "v16.14.2",
     "npm":"8.5.0",
-    "tsc":"Version 4.6.4"
+    "tsc":"Version 4.6.4",
+    "ts-node":"v10.8.1"
   }
 }

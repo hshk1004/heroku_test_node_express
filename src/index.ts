@@ -6,7 +6,7 @@ const app = express();
 
 const PORT = process.env.PORT || 8080;
 
-const router = require('./router/index.ts');
+const router = require('./router/index');
 const input_json = require('./input_htmls/input_json_html');
 const input_data = require('./input_htmls/input_json_data');
 

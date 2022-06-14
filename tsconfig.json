@@ -96,6 +96,9 @@
 
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
-    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
-  }
+    "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
+    "outDir": "dfout"
+  },
+  "include": ["src/**/*"],     //src에 모든 ts파일이 있다고 명시
+  "exclude": ["node_modules"]
 }

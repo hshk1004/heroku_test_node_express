@@ -24,6 +24,7 @@
     "node": "v16.14.2",
     "npm": "8.5.0",
     "tsc": "Version 4.6.4",
-    "ts-node": "v10.8.1"
+    "ts-node": "v10.8.1",
+    "compiler": "v4.7.3"
   }
 }

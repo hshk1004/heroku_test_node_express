@@ -27,7 +27,7 @@ router.use('/', (req,res)=>{
     console.log('쿼리문을 만든거시와요... 하와와' + allquery);
 
     //데이터베이스 연결후 쿼리 시전후 데이터베이스 연결 끊기
-    data.connect();
+    
 
     console.log('데이터베이스 연결한 거시와요...');
    
@@ -40,7 +40,7 @@ router.use('/', (req,res)=>{
     });
     
 
-    data.end();
+    
 
     console.log('데이터 보내고 끝낸 것이와요 하와와...');
 
@@ -56,7 +56,7 @@ router.get('/', (req,res)=>{
     console.log('쿼리문을 만든거시와요... 하와와' + allquery);
 
     //데이터베이스 연결후 쿼리 시전후 데이터베이스 연결 끊기
-    data.connect();
+    
 
     console.log('데이터베이스 연결한 거시와요...');
    
@@ -69,7 +69,7 @@ router.get('/', (req,res)=>{
     });
     
 
-    data.end();
+    
 
     console.log('데이터 보내고 끝낸 것이와요 하와와...');
 
@@ -82,7 +82,7 @@ router.get('/id', (req,res)=>{
     const idquery = queryselect + queryselectid + querytable;
 
     //데이터베이스 연결후 쿼리 시전후 데이터베이스 연결 끊기
-    data.connect();
+    
 
    
     data.query(idquery,function(err, results, fields){
@@ -94,7 +94,7 @@ router.get('/id', (req,res)=>{
     });
     
 
-    data.end();
+    
     
 });
 
@@ -105,7 +105,7 @@ router.get('/jsontable', (req,res)=>{
     const jsontablequery = queryselect + queryselectjsontable + querytable;
 
     //데이터베이스 연결후 쿼리 시전후 데이터베이스 연결 끊기
-    data.connect();
+    
 
    
     data.query(jsontablequery,function(err, results, fields){
@@ -117,7 +117,7 @@ router.get('/jsontable', (req,res)=>{
     });
     
 
-    data.end();
+    
     
 });
 

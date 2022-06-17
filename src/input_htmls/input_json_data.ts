@@ -14,12 +14,12 @@ router.use(express.urlencoded({extended: true}));
 
 
 router.get('/', function(req,res,next){
-    console.log('겟또다제~ 우효~');
-    res.send('?게이 지뭐');
+    console.log('겟');
+    res.send('get');
 });
 
 router.post('/', function(req,res,next){
-    console.log('야스각?');
+    console.log('post');
     const year = req.body.year;
     console.log(year);
     const json_input = req.body.jsonfile;
@@ -38,7 +38,7 @@ router.post('/', function(req,res,next){
 
     console.log(year+json_input);
 
-    res.send(year+'이게 야스지'+json_input);
+    res.send(year+json_input);
 });
 
 module.exports = router;

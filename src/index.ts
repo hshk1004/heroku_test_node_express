@@ -1,5 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
+import cors from 'cors';
 
 
 const app = express();
@@ -9,6 +10,11 @@ const PORT = process.env.PORT || 8080;
 const router = require('./router/index');
 const input_json = require('./input_htmls/input_json_html');
 const input_data = require('./input_htmls/input_json_data');
+
+app.use(cors({
+    origin: '*',
+    credentials: true
+}))
 
 
 app.use(express.json());

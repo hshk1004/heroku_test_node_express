@@ -3,7 +3,6 @@ import bodyParser from "body-parser";
 import cors from 'cors';
 
 
-
 const app = express();
 
 const PORT = process.env.PORT || 8080;
@@ -29,5 +28,4 @@ app.use('/data_input', input_data);
 
 app.listen(PORT, ()=>{
     console.log('서버 돌아가는중...' + PORT);
-
 });

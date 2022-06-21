@@ -1,6 +1,6 @@
 import express from 'express';
 import mysql from 'mysql';
-import multer from 'multer';
+//import multer from 'multer';
 
 
 const router = express.Router();
@@ -13,16 +13,16 @@ const data = mysql.createConnection(db);
 const uploaddir = '../../uploads/'
 
 //multer 설정
-const storage = multer.diskStorage({
-    destination(req, file, cb) {
-        cb(null, uploaddir);
-    },
-    filename(req, file, cb){
-        cb(null, `${Date.now()}__${file.originalname}`);
-    }
-});
-const upload = multer({ dest: uploaddir});
-const uploadoriginalname = multer({ dest: uploaddir, storage:storage });
+//const storage = multer.diskStorage({
+//    destination(req, file, cb) {
+//        cb(null, uploaddir);
+//    },
+//    filename(req, file, cb){
+//        cb(null, `${Date.now()}__${file.originalname}`);
+//    }
+//});
+//const upload = multer({ dest: uploaddir});
+//const uploadoriginalname = multer({ dest: uploaddir, storage:storage });
 
 //쿼리 삽입문 기본
 const jsonquery = 'INSERT INTO jsontable VALUES ';
@@ -37,7 +37,7 @@ router.get('/', function(req,res,next){
     res.send('get');
 });
 
-router.post('/json', uploadoriginalname.single('jsonfile') ,  function(req,res,next){
+router.post('/json', /*uploadoriginalname.single('jsonfile') ,*/  function(req,res,next){
     console.log('post');
 
     
@@ -51,9 +51,9 @@ router.post('/json', uploadoriginalname.single('jsonfile') ,  function(req,res,n
     //데이터베이스 연결후 쿼리 시전후 데이터베이스 연결 끊기
     //data.connect();
 
-    data.query(jsonquery,['(SELECT IFNULL(MAX(id) + 1, 1) FROM jsontable b)', jsonfile],function(err,results,fields){
-        console.log(err);
-    });
+    //data.query(jsonquery,['(SELECT IFNULL(MAX(id) + 1, 1) FROM jsontable b)', jsonfile],function(err,results,fields){
+    //    console.log(err);
+    //});
 
     //data.end();
 

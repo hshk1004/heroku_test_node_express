@@ -1,6 +1,8 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from 'cors';
+import fs from 'fs';
+
 
 
 const app = express();
@@ -28,4 +30,8 @@ app.use('/data_input', input_data);
 
 app.listen(PORT, ()=>{
     console.log('서버 돌아가는중...' + PORT);
+
+    //json 파일 받을 경로 추가
+    const dir = './uploads/';
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir); 
 });

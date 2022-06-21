@@ -8,16 +8,36 @@
 </head>
 <body>
     <h2>json 데이터를 입력하시오.</h2>
-    <form action="https://storageforstatejson.herokuapp.com/router/data_input" name="post_json" accept-charset="" method="post">
-        1990년부터 2022년까지 년도 선택 : <input type="number" min="1990" max="2022" name="year">
-        <br>
+    <form action="https://storageforstatejson.herokuapp.com/router/data_input" name="post_json" enctype="multipart/form-data" accept-charset="" method="post">  <!--헤로쿠에서 사용할것 -->
+    <!--<form action="http://localhost:8080/data_input/json" name="post_json_file" enctype="multipart/form-data" accept-charset="" method="post">  로컬에서 사용할것 -->
+        json 파일로 입력 : 
+        <br><br>
+        예) [{"word": "블록체인", "classification": "itnews", "frequency": 372},
+        <br><br>
+        {"word": "NFT", "classification": "정부보고서", "frequency": 23145},
+        <br><br>
+        {"word": "AI", "classification": "itnews", "frequency": 4612}]
+        <br><br>
         <input type="file" accept="application/JSON" name="jsonfile">
+        <input type="submit" value="제출">
+        <input type="reset" value="리셋">
+    </form>
+
+    <form action="https://storageforstatejson.herokuapp.com/router/data_input" name="post_json" enctype="multipart/form-data" accept-charset="" method="post">  <!--헤로쿠에서 사용할것 -->
+    <!--<form action="http://localhost:8080/data_input/data" name="post_json_data" enctype="multipart/form-data" accept-charset="" method="post">  로컬에서 사용할것 -->
+        단어 명 : <input type="text" min="1990" max="2022" name="word">
+        <br>
+        단어 찾은 매체 : <input type="checkbox" min="1990" max="2022" name="classification">
+        <br>
+        단어 빈도수 : <input type="number" min="1990" max="2022" name="frequency">
+        <br>
+        
         <br><br><br><br>
         <input type="submit" value="제출">
         <input type="reset" value="리셋">
     </form>
     <script>
-        $("input[name=post_json]").off().on("change", function(){
+        $("input[name=post_json_file]").off().on("change", function(){
 
             if (this.files && this.files[0]) {
         
